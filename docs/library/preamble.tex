@@ -1,0 +1,67 @@
+%!TEX program=xelatex+makeindex+bibtex
+% Include all project wide packages here.
+\usepackage{polyglossia}
+\setmainlanguage{english}
+\usepackage[strict,autostyle]{csquotes}
+\usepackage[svgnames]{xcolor}
+\usepackage{graphicx}
+%\usepackage{epstopdf}
+%\usepackage{pdfpages}
+\usepackage{caption}
+\usepackage[list=true]{subcaption}
+\usepackage{float}
+\usepackage{standalone}
+\usepackage{import}
+\usepackage{tocloft}
+%\usepackage{wrapfig}
+\usepackage{authblk}
+%\usepackage{array}
+%\usepackage{multicol}
+%\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage[toc,page,title,titletoc]{appendix}
+\usepackage{xunicode}
+\usepackage{fontspec}
+%\usepackage{tikz}
+%\usepackage{pgfplots}
+\usepackage[binary-units]{siunitx}
+\usepackage[parfill]{parskip}
+\usepackage[pages=some]{background}
+\usepackage[absolute]{textpos}
+\usepackage{titlepic}
+%\usepackage{tikz}
+%\usetikzlibrary{shapes,arrows,chains}
+%\pgfplotsset{compat=newest}
+%\pgfplotsset{plot coordinates/math parser=false}
+%\newlength\figureheight 
+%\newlength\figurewidth
+\usepackage{mathtools}
+\usepackage{unicode-math}
+\usepackage{rotating}
+\usepackage{fancyhdr}
+\usepackage[compact]{titlesec}
+\usepackage{enumitem}
+\usepackage{verbatim}
+%\usepackage{blindtext}
+\usepackage[margin=2.5cm,headheight=35pt]{geometry}
+\usepackage[
+    backend=bibtexu,
+	texencoding=utf8,
+bibencoding=utf8,
+    style=ieee,
+    sortlocale=en_GB,
+    language=auto
+]{biblatex}
+\usepackage{listings}
+\usepackage{fullpage}
+\newcommand{\includecode}[4][c]{\lstinputlisting[caption=#2, escapechar=, style=#1,label=#4]{#3}}
+\newcommand{\superscript}[1]{\ensuremath{^{\textrm{#1}}}}
+\newcommand{\subscript}[1]{\ensuremath{_{\textrm{#1}}}}
+
+\newcommand{\chapternumber}{\thechapter}
+\renewcommand{\appendixname}{Appendix}
+\renewcommand{\appendixtocname}{Appendices}
+\renewcommand{\appendixpagename}{Appendices}
+
+\usepackage[hidelinks]{hyperref}
+\hypersetup{breaklinks=true} %<--------ALWAYS LAST
