@@ -1,0 +1,121 @@
+html, body, #map-canvas {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.fill {
+	min-height: 100%;
+	height: 100%;
+}
+
+#sidebar-header {
+	margin-bottom: 10px;
+}
+
+#sidebar-footer {
+	margin-top: 10px;
+	vertical-align: bottom;
+}
+
+#sidebar-content {
+	overflow: auto;
+	height: auto;
+	padding: 0 5px;
+}
+
+.track3 {
+	width: 10px;
+	background: rgba(0, 0, 0, 0);
+	margin-right: 2px;
+	border-radius: 10px;
+	-webkit-transition: background 250ms linear;
+	transition: background 250ms linear;
+}
+
+	.track3:hover,
+	.track3.dragging {
+		background: #d9d9d9;
+		background: rgba(0, 0, 0, 0.15);
+	}
+
+.handle3 {
+	width: 7px;
+	right: 0;
+	background: #999;
+	background: rgba(0, 0, 0, 0.4);
+	border-radius: 7px;
+	-webkit-transition: width 250ms;
+	transition: width 250ms;
+}
+
+.track3:hover .handle3,
+.track3.dragging .handle3 {
+	width: 10px;
+}
+
+.method {
+	border: 1px lightgrey solid;
+	height: 75px;
+	margin-top: 2px;
+	margin-bottom: 2px;
+}
+
+	.method:hover {
+		background-color: lightgray;
+	}
+
+.directions-travel-mode-icon {
+	height: 20px;
+	width: 20px;
+	background-image: url("//maps.gstatic.com/tactile/directions/travel_mode/sprite-1x-20130906.png");
+	background-size: 20px 276px;
+}
+
+.directions-drive-icon {
+	background-position: 0 -40px;
+}
+.directions-transit-icon {
+	background-position: 0 -80px;
+}
+.directions-walk-icon {
+	background-position: 0 -120px;
+}
+.directions-bicycle-icon {
+	background-position: 0 -160px;
+}
+label.active .directions-drive-icon {
+	background-position: 0 -60px;
+}
+label.active .directions-transit-icon {
+	background-position: 0 -100px;
+}
+label.active .directions-walk-icon {
+	background-position: 0 -140px;
+}
+label.active .directions-bicycle-icon {
+	background-position: 0 -180px;
+}
+
+.transport-mode {
+	padding: 5px;
+	margin-bottom: 10px;
+}
+.transport-mode-name {
+	font-style: italic;
+}
+.transport-mode-total {
+	padding: 5px;
+	margin-bottom: 10px;
+	font-weight: bold;
+}
+
+.route-error {
+	line-height: 20px; 
+	vertical-align:middle;
+	padding-top: 6px;
+	padding-bottom: 6px;
+}
+	.route-error #error {
+		color:red;
+	}
