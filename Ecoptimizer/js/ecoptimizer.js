@@ -1,7 +1,9 @@
 var directionsDisplay;
 var directionsService = new google.maps.DirectionsService();
 var map;
-
+const low = 4;
+const high = 30;
+var pwr = 0.45;
 
 /*
 Data
@@ -112,7 +114,9 @@ function initialize() {
     	$(d_totals).addClass('transport-mode-total')
 			.html(html.join(''))
 			.appendTo($("#ecocosts"));
-    	//console.log(ecoResults);
+
+    	updateSmiley((totalImpact / totalDist));
+
     });
 
 }
@@ -208,7 +212,8 @@ $(function () {
 	$('#sidebar-content').enscroll({
 		showOnHover: false,
 		verticalTrackClass: 'track3',
-		verticalHandleClass: 'handle3'
+		verticalHandleClass: 'handle3',
+		scrollIncrement: 80
 	});
 	$('#sidebar-content').css('width', '');
 	/*$('.method').click(function (){
@@ -223,6 +228,127 @@ $(function () {
 		updateContentHeight();
 	});
 });
+
+function updateSmiley(imperkm) {
+	var canvas = document.getElementById('ecosmiley_c');
+	canvas.height = canvas.width;
+	
+	var context = canvas.getContext('2d');
+	if (typeof context.imageSmoothingEnabled != 'undefined') {
+		context.imageSmoothingEnabled = true;
+	}
+	context.clearRect(0, 0, canvas.width, canvas.height);
+
+	drawSmiley(context, canvas.width, canvas.height, imperkm);
+}
+function drawSmiley(context, w, h, value) {	
+	var colorvalue = 0;
+	var strokecolor = 'black';
+	if (value >= high) {
+		colorvalue = 1;
+	} else if (value > low) {
+		colorvalue = (value - low) / (high - low);
+	}
+	colorvalue = 1 - Math.pow(colorvalue,pwr);
+	
+	var color = numberToColorHsl(colorvalue);	
+
+	var r = (Math.min(h, w) - 20) / 2;
+	var eyesize = r / 10;
+	var mouthdeviation = (colorvalue * 2 - 1) * r / 2;
+
+	var eyeposY = h / 2 - r / 2.5;
+	var eyeposX_L = w / 2 - r / 2.25;
+	var eyeposX_R = w / 2 + r / 2.25;
+
+	var mouthposX_L = w / 2 - r / 2;
+	var mouthposX_R = w / 2 + r / 2;
+	var mouthposX_M = w / 2;
+	var mouthposY_LR = h / 2 + r / 3 - mouthdeviation / 4;
+	var mouthposY_M = mouthposY_LR + mouthdeviation;
+	
+	//setup 
+
+	context.lineCap = "round";
+	//circle	
+	context.fillStyle = color;
+	context.beginPath();
+	context.arc(w / 2, h / 2, r, 0, 2 * Math.PI);
+	//context.closePath();
+	context.fill();
+	context.lineWidth = eyesize;
+	context.stroke();
+
+	//eye left
+	context.fillStyle = strokecolor;
+	context.beginPath();
+	context.arc(eyeposX_L, eyeposY, eyesize, 0, 2 * Math.PI);
+	//context.closePath();
+	context.fill();
+	//eye right
+	context.fillStyle = strokecolor;
+	context.beginPath();
+	context.arc(eyeposX_R, eyeposY, eyesize, 0, 2 * Math.PI);
+	//context.closePath();
+	context.fill();
+
+	//mouth
+	context.beginPath();
+	context.moveTo(mouthposX_L, mouthposY_LR);
+	context.quadraticCurveTo(mouthposX_M, mouthposY_M, mouthposX_R, mouthposY_LR);
+	context.lineWidth = eyesize;
+	context.stroke();
+
+}
+
+/**
+ * http://stackoverflow.com/questions/2353211/hsl-to-rgb-color-conversion
+ *
+ * Converts an HSL color value to RGB. Conversion formula
+ * adapted from http://en.wikipedia.org/wiki/HSL_color_space.
+ * Assumes h, s, and l are contained in the set [0, 1] and
+ * returns r, g, and b in the set [0, 255].
+ *
+ * @param   Number  h       The hue
+ * @param   Number  s       The saturation
+ * @param   Number  l       The lightness
+ * @return  Array           The RGB representation
+ */
+function hslToRgb(h, s, l) {
+	var r, g, b;
+
+	if (s == 0) {
+		r = g = b = l; // achromatic
+	} else {
+		function hue2rgb(p, q, t) {
+			if (t < 0) t += 1;
+			if (t > 1) t -= 1;
+			if (t < 1 / 6) return p + (q - p) * 6 * t;
+			if (t < 1 / 2) return q;
+			if (t < 2 / 3) return p + (q - p) * (2 / 3 - t) * 6;
+			return p;
+		}
+
+		var q = l < 0.5 ? l * (1 + s) : l + s - l * s;
+		var p = 2 * l - q;
+		r = hue2rgb(p, q, h + 1 / 3);
+		g = hue2rgb(p, q, h);
+		b = hue2rgb(p, q, h - 1 / 3);
+	}
+
+	return [Math.floor(r * 255), Math.floor(g * 255), Math.floor(b * 255)];
+}
+
+// convert a number to a color using hsl
+function numberToColorHsl(i) {
+	// as the function expects a value between 0 and 1, and red = 0° and green = 120°
+	// we convert the input to the appropriate hue value
+	var hue = i * 1.2 / 3.60;
+	// we convert hsl to rgb (saturation 100%, lightness 50%)
+	var rgb = hslToRgb(hue, 1, .5);
+	// we format to css value and return
+	return 'rgb(' + rgb[0] + ',' + rgb[1] + ',' + rgb[2] + ')';
+}
 
 function updateContentHeight() {
 	var height = 20 + $('#sidebar-footer').height() + $('#sidebar-header').height();

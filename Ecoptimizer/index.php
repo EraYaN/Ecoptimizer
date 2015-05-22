@@ -38,18 +38,18 @@ $lng = 4.373527;
 							<div class="col-xs-12">
 								<div class="btn-group btn-group-sm" data-toggle="buttons" id="travelModeButtons">
 									<label class="btn btn-default active">
-										<input type="radio" name="travelMode" id="travelMode_DRIVING" value="DRIVING"/>
+										<input type="radio" name="travelMode" id="travelMode_DRIVING" value="DRIVING" />
 										<div class="directions-travel-mode-icon directions-drive-icon" title="Driving" aria-label="Driving"></div>
 									</label>
 									<label class="btn btn-default">
 										<input type="radio" name="travelMode" id="travelMode_TRANSIT" value="TRANSIT" />
 										<div class="directions-travel-mode-icon directions-transit-icon" title="Transit" aria-label="Transit"></div>
 									</label>
-                                    <label class="btn btn-default">
+									<label class="btn btn-default">
 										<input type="radio" name="travelMode" id="travelMode_WALKING" value="WALKING" />
 										<div class="directions-travel-mode-icon directions-walk-icon" title="Walking" aria-label="Walking"></div>
 									</label>
-                                    <label class="btn btn-default">
+									<label class="btn btn-default">
 										<input type="radio" name="travelMode" id="travelMode_BICYCLING" value="BICYCLING" />
 										<div class="directions-travel-mode-icon directions-bicycle-icon" title="Bicycling" aria-label="Bicycling"></div>
 									</label>
@@ -69,27 +69,36 @@ $lng = 4.373527;
 						<div class="form-group">
 							<div class="col-xs-12">
 								<button class="btn btn-primary pull-right" name="calculate" id="calculate" type="button">Calculate</button>
-                                <div class="route-error hidden"><small id="error">Error</small></div>
+								<div class="route-error hidden"><small id="error">Error</small></div>
 							</div>
 						</div>
 					</form>
 				</div>
 			</div>
 			<div id="sidebar-content" class="col-lg-2 col-md-4 col-sm-6">
-				<div class="col-xs-12" id="ecocosts">
-
+				<div class="col-xs-12">
+					<div class="row">
+						<div class="col-xs-3" id="ecosmiley" style="padding: 0;">
+							<canvas id="ecosmiley_c" style="width: 100%;">??
+							</canvas>
+						</div>
+						<div class="col-xs-9" id="ecocosts">
+						</div>
+					</div>
 				</div>
 				<div class="col-xs-12" id="route">
 				</div>
 			</div>
 			<div id="sidebar-footer" class="col-lg-2 col-md-4 col-sm-6">
-					<!--<form class="form-horizontal">
+				<!--<form class="form-horizontal">
 						<div class="form-group">
 							<button type="submit" class="btn btn-default col-xs-12">Continue</button>
 						</div>
 					</form>-->
-					<p class="muted credit"><small>&copy 2015 Erwin de Haan. All rights reserved. Using data from Camden council/Travelfootprint.org/Clear Zone Partnership. 
-                        Points are overall TFP env rating based on <a href="https://docs.google.com/spreadsheet/ccc?key=0Agol553XfuDZdHlWSmRRckpXZWdSczdoVVBjbHU2dHc&hl=en_GB#gid=0" target="_blank">this</a>.</small></p>				
+				<p class="muted credit">
+					<small>&copy 2015 Erwin de Haan. All rights reserved. Using data from Camden council/Travelfootprint.org/Clear Zone Partnership. 
+                        Points are overall TFP env rating based on <a href="https://docs.google.com/spreadsheet/ccc?key=0Agol553XfuDZdHlWSmRRckpXZWdSczdoVVBjbHU2dHc&hl=en_GB#gid=0" target="_blank">this</a>.</small>
+				</p>
 			</div>
 		</div>
 	</div>

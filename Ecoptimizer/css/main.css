@@ -119,3 +119,9 @@ label.active .directions-bicycle-icon {
 	.route-error #error {
 		color:red;
 	}
+
+
+.adp-placemark {
+background: none !important;
+border: 0 !important;
+}
