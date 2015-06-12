@@ -9,10 +9,39 @@
 \date{\today}
 \begin{document}
 \maketitle
-The Ecoptimizer is a tool to see how much impact you travel has on the world.
+The Ecoptimizer is a tool to see how much impact your travel has on the world.
 \section{Impact}
+I have a table of value with points per kilometer. Google gives back each route in steps with the type of travel attatched (Table \ref{tab:google-transport-modes})
+\section{Indicator}
+At first I had a normal RGB gradient between green and red, this gave a very nasty brownish color in the middle. (Figure \ref{fig:green-to-red-rgb})
+This does not look very good the better option it to make the gradient by changing the hue from HSL/HSB colors. (Figure \ref{fig:green-to-red-hsb})
+\begin{figure}[H]
+	\centering	
+	\includegraphics[width=\textwidth]{resources/green-to-red-rgb.png}
+	\caption{The RGB gradient.}
+	\label{fig:green-to-red-rgb}
+\end{figure}
+\begin{figure}[H]
+	\centering	
+	\includegraphics[width=\textwidth]{resources/green-to-red-hsb.png}
+	\caption{The HSL/HSB gradient.}
+	\label{fig:green-to-red-hsb}
+\end{figure}
 
-\section{Indicator color}
+To move the yellow to the right or to the left we can use several functions to transform the hue value. (Figure \ref{fig:colors}) In the end I picked the almost squared root ($\text{x}^\text{0.45}$). This to make the difference between cycling (around 4.2-4.5) and walking (around 5) more apparent.
 
+\begin{figure}[H]
+	\centering
+	\setlength\figureheight{8cm}
+    	\setlength\figurewidth{0.9\linewidth}
+	\input{resources/colors.tikz}
+	\caption{The different color translation functions.}
+	\label{fig:colors}
+\end{figure}
+
+The smiley is draws using some circles and a quadratic curve. The code is visible in Listing \ref{lst:smiley.js}.
+
+
+\includecode[js]{smiley.js}{resources/smiley.js}{lst:smiley.js}
 
 \end{document}

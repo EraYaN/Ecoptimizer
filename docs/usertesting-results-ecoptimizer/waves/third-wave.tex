@@ -1,0 +1,102 @@
+% !TeX spellcheck = en_GB
+% !TEX program = xelatex+makeindex+bibtex
+\documentclass[final,a4paper,11pt]{article}
+\input{../../library/preamble.tex}
+\input{../../library/style.tex}
+\addbibresource{../library/bibliography.bib}
+\author{Erwin de Haan}
+\title{User testing results for Ecoptimizer}
+\date{\today}
+\newlength{\resulttablecolone}
+\setlength{\resulttablecolone}{4 cm}
+\newlength{\resulttablecoltwo}
+\setlength{\resulttablecoltwo}{11.3 cm}
+\begin{document}
+\maketitle
+
+\subsection*{Third-wave (N=6)}
+\subsubsection*{User ID 4, Advanced}
+User had their route plotted in less than 1 minute. (same as last time)
+\begin{table}[H]
+\begin{tabular}{p{\resulttablecolone}|p{\resulttablecoltwo}}
+\textbf{Origin} & Boven-Leeuwen \\
+\textbf{Mode of transport} & Same as last time \\
+\textbf{Rationale} & Same as last time \\
+\textbf{Remarks (function)} & ``The smiley maybe need to be less green, so you can tell a difference between bicylce and walking, also less red.'' \\
+\textbf{Rem. (look-and-feel)} & ``Still looks kind of bad, Firefox messes up the smiley, all the jaggies (note she mean the `stair' effect caused my aliasing). On safari on my phone it looks fine.'' \\
+\end{tabular}
+\end{table}
+Reflection: Has a good point of the end points of the colors for the smiley. (Now 5-25 I might widen that a little)
+
+\subsubsection*{User ID 5, Beginner}
+User had their route plotted in about 1 minute. (same as last time)
+\begin{table}[H]
+\begin{tabular}{p{\resulttablecolone}|p{\resulttablecoltwo}}
+\textbf{Origin} & Boven-Leeuwen \\
+\textbf{Mode of transport} & Same as last time \\
+\textbf{Rationale} & Same as last time \\
+\textbf{Remarks (function)} & ``What did you change? Is it the route display? The buttons look gone. (..) Aah oke, good that was ugly.'' \\
+\textbf{Rem. (look-and-feel)} & ``As you just said those weird grey things were ugly, it's better now. It's also faster now?'' \\
+\end{tabular}
+\end{table}
+Reflection: Not really a beginner in my eyes. (Same) Changes were note that mayor and yes I fixed a lot of the ugliness that I get from Google. No it's not faster, user was just looking for improvements.
+
+\subsubsection*{User ID 6, Advanced}
+User had their route plotted in about 4 minutes. Could be due to language barrier. Let her test a route towards Saitama (about 70 km).
+\begin{table}[H]
+\begin{tabular}{p{\resulttablecolone}|p{\resulttablecoltwo}}
+\textbf{Origin} & Chiba, Japan \\
+\textbf{Mode of transport} & Public Transport \\
+\textbf{Rationale} & ``It's a little expensive, but the public transport here works better than going by car. It says here I could drive there in  one and a half hour. I wish. Traffic is way worse. I'm a girl so the trains are not too bad in rush hour.'' \\
+\textbf{Remarks (function)} & ``It looks nice but does not really work that well for Japanese addresses, it does not do suggestions either. The public transport option give `no results!' a lot in Japan. If I try New York to DC it works much better. And the smiley looks pretty happy about that one.'' \\
+\textbf{Rem. (look-and-feel)} & ``I like the smiley, if it is happy it's cute. Not so cute when not happy. In Japan they would have made the smiley the main part of the program. maybe used the prefecture mascot of the company mascot.'' \\
+\end{tabular}
+\end{table}
+Reflection: Thought it would be fun to let some of my language exchange contact try. Way different way of looking at things. it also seems to have trouble with foreign addresses, which is a shame, if you input them on maps.google.com it does give results. Just very bad ones.
+
+\subsubsection*{User ID 7, Expert}
+User had their route plotted in less than 1 minute.
+\begin{table}[H]
+\begin{tabular}{p{\resulttablecolone}|p{\resulttablecoltwo}}
+\textbf{Origin} & Delft \\
+\textbf{Mode of transport} & Public transport \\
+\textbf{Rationale} & ``Can't afford a car man. And public transport is free.'' \\
+\textbf{Remarks (function)} & ``It really is something typical you made this for sustainable crowds. I wouldn't use it. I can't use it with google now, so to much of a hassle. Not that I think it's bad, I'm just not the demographic, I think you should try this in LA or something. (sic)'' \\
+\textbf{Rem. (look-and-feel)} & ``As I said I don't really care either way. I think it would be kind of fun for the packages if it is integrated into a shop, but still kind of a gimmick and a typical `ooh look how sustainable we are.' '' \\
+\end{tabular}
+\end{table}
+Reflection: Nota very serious test. And I knew he was not the demographic. He has a fair point though with the integration in a shop. I couldn't really implement this to test is because I chose to go this way to have more of a connection with people but I think for the indifferent people it would make more sense in the case of picking shipping because then they don't have to proactively seek the application out to use it.
+
+\subsubsection*{User ID 8, Expert}
+User had their route plotted in less than 1 minute.
+\begin{table}[H]
+\begin{tabular}{p{\resulttablecolone}|p{\resulttablecoltwo}}
+\textbf{Origin} & Delft \\
+\textbf{Mode of transport} & Car \\
+\textbf{Rationale} & ``I would go to amsterdam to party so I want to be able to drive home late. I don't drink ;). And public transport at night is not my favorite.'' \\
+\textbf{Remarks (function)} & ``I guess it works fine. The smiley is a nice way to get a reference, but I would need to trust that you made a good reference and not one influenced by any goals you might have.'' \\
+\textbf{Rem. (look-and-feel)} & ``As I said I don't really care either way. I think it would be kind of fun for the packages if it is integrated into a shop, but still kind of a gimmick and a typical `ooh look how sustainable we are.' '' \\
+\end{tabular}
+\end{table}
+Reflection: Nota very serious test. And I knew he was not the demographic. He has a fair point though with the integration in a shop. I couldn't really implement this to test is because I chose to go this way to have more of a connection with people but I think for the indifferent people it would make more sense in the case of picking shipping because then they don't have to proactively seek the application out to use it.
+
+\subsubsection*{User ID 9, Beginner}
+User had their route plotted in about 3 minutes.
+\begin{table}[H]
+\begin{tabular}{p{\resulttablecolone}|p{\resulttablecoltwo}}
+\textbf{Origin} & Amstelveen \\
+\textbf{Mode of transport} & Bicycle \\
+\textbf{Rationale} & ``When we visit the city we always just take the our bike, it's only about 45 minutes. I like that is is the most ecofriendly too. I thought maybe walking would be more eco friendly, but I guess a bicycle is more efficient, makes sense.'' \\
+\textbf{Remarks (function)} & ``I like that it tells you how good you are in terms of being `bewust' (can't think of a good english word with the same intended meaning, eco-conscious?). The smiley looks out of place sometimes with its harsh outlines.'' \\
+\textbf{Rem. (look-and-feel)} & ``I can't really tell the difference between walking and bicycling from the smiley color. Maybe put some fancy math in, so it makes the change faster on the greener end and slower on the redder end.'' \\
+\end{tabular}
+\end{table}
+Reflection: The smiley does look out of place in browsers who refuse to do anti-aliasing. I guess I could put the color values through something like a square root. This user is really the kind that is busy being sustainable, I think it would fit this kind of persons home.
+
+\subsubsection*{Third wave reflection}
+I changed the interval the smiley works on from 5-25 to 4-30, it seems to be an important part in deciding if something is ``bad''.
+ I have looked into making it look more ``cute'' like giving is a round face or extra details, but it was some trouble with getting the formula's right, but it worked out.
+ Didn't add any details because that makes the code needlessly complex.
+ I also changed the color gradient input used from linear to $x^0.45$ so almost a square root, to give a more apparent difference between walking and cycling.
+
+\end{document}

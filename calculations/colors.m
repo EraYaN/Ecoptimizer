@@ -11,8 +11,8 @@ colorvalue_sqrt = sqrt((value_clamped-low)/(high-low));
 colorvalue_pwr = ((value_clamped-low)/(high-low)).^0.45;
 
 plot(value,[colorvalue_lin; colorvalue_sqrt; colorvalue_pwr]);
-legend('lin','sqrt', 'pwr');
-title('The indicator color tranformation function options');
+legend('Linear','Square Root', 'Almost Square Root','Location','southeast');
+title('The indicator color transformation function options');
 xlabel('Impact per KM');
 ylabel('Color HSL value (0=120 degrees, 1=0 degrees)');
 savefig('colors.fig');

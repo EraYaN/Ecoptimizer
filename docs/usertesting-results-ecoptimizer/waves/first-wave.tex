@@ -1,0 +1,60 @@
+% !TeX spellcheck = en_GB
+% !TEX program = xelatex+makeindex+bibtex
+\documentclass[final,a4paper,11pt]{article}
+\input{../../library/preamble.tex}
+\input{../../library/style.tex}
+\addbibresource{../library/bibliography.bib}
+\author{Erwin de Haan}
+\title{User testing results for Ecoptimizer}
+\date{\today}
+\newlength{\resulttablecolone}
+\setlength{\resulttablecolone}{4 cm}
+\newlength{\resulttablecoltwo}
+\setlength{\resulttablecoltwo}{11.3 cm}
+\begin{document}
+\maketitle
+
+\subsection*{First-wave (N=3)}
+\subsubsection*{User ID 1, Advanced}
+User had their route plotted and chosen in less then 1 minute.
+\begin{table}[H]
+\begin{tabular}{p{\resulttablecolone}|p{\resulttablecoltwo}}
+\textbf{Origin} & Vianen \\
+\textbf{Mode of transport} & Car \\
+\textbf{Rationale} & ``I live a long way from the nearest bus stop and cycling is way to far.'' \\
+\textbf{Remarks (function)} & ``The number doesn't say anything, maybe add a visual element.'' \\
+\textbf{Rem. (look-and-feel)} & ``It looks pretty neat but line up this part here (points to the mode of transport buttons). Other than that I think it looks okay.'' \\
+\end{tabular}
+\end{table}
+Reflection: Is a designer so the non-lined up stuff bothers him. (I fixed it obviously). Lives in rural area.
+
+\subsubsection*{User ID 2, Beginner}
+User had their route plotted in about 3 minutes, but did not want to travel to Amsterdam. User did want to travel to Nieuwegein which is much closer (by car).
+\begin{table}[H]
+\begin{tabular}{p{\resulttablecolone}|p{\resulttablecoltwo}}
+\textbf{Origin} & Vianen \\
+\textbf{Mode of transport} & None \\
+\textbf{Rationale} & ``I don't want to travel all the way. I don't like driving the car on the highway anymore. And buses are just to much of a bother. Can I try Nieuwegein? (...) User goes by car, buses are too much of a both and user is not old enough for the Valys. (sic)'' \\
+\textbf{Remarks (function)} & ``You did a good job.'' \\
+\textbf{Rem. (look-and-feel)} & ``It is just really nice that you can make these kinds of things, you will go on to make a lot of money.'' \\
+\end{tabular}
+\end{table}
+Reflection: Grandfathers are biased... Everything you do is great somehow. It must be noted that my grand father is not your typical grandfather, he uses his laptop and an iPhone quite a lot and loves playing around on them. At the time my grandma was very sick, she passed away 3 weeks later.
+
+\subsubsection*{User ID 3, Expert}
+User had their route plotted in less than 1 minute.
+\begin{table}[H]
+\begin{tabular}{p{\resulttablecolone}|p{\resulttablecoltwo}}
+\textbf{Origin} & The Hague \\
+\textbf{Mode of transport} & Public Transport (via The Hague HS) \\
+\textbf{Rationale} & ``It's the easiest. I'm not cycling or walking to Amsterdam.'' \\
+\textbf{Remarks (function)} & ``I don't see how this is sightly relevant or useful, I know cars are bad, funny that public transport is not even a little bad.'' \\
+\textbf{Rem. (look-and-feel)} & ``It needs more smileys.'' \\
+\end{tabular}
+\end{table}
+Reflection: Well.. yes the visual indicator again. And someone who does not really care about enviroment and does not have a car.
+
+\subsubsection*{First wave reflection}
+I need to fixed somethings and I will add a dynamic smiley. Will have to see in the next wave if that helps.
+
+\end{document}

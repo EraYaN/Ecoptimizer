@@ -1,0 +1,75 @@
+% !TeX spellcheck = en_GB
+% !TEX program = xelatex+makeindex+bibtex
+\documentclass[final,a4paper,11pt]{article}
+\input{../../library/preamble.tex}
+\input{../../library/style.tex}
+\addbibresource{../library/bibliography.bib}
+\author{Erwin de Haan}
+\title{User testing results for Ecoptimizer}
+\date{\today}
+\newlength{\resulttablecolone}
+\setlength{\resulttablecolone}{4 cm}
+\newlength{\resulttablecoltwo}
+\setlength{\resulttablecoltwo}{11.3 cm}
+\begin{document}
+\maketitle
+
+\subsection*{Second-wave (N=4)}
+\subsubsection*{User ID 1, Advanced}
+User had their route plotted and chosen in less then 1 minute. (same as last time)
+\begin{table}[H]
+\begin{tabular}{p{\resulttablecolone}|p{\resulttablecoltwo}}
+\textbf{Origin} & Vianen \\
+\textbf{Mode of transport} & Same as last time \\
+\textbf{Rationale} & Same as last time \\
+\textbf{Remarks (function)} & ``The smiley gives an idea of how `bad' a certain way of travel is, the points per kilometer also help. The number only really work if you compare things, not really clear what the absolute value of a point is without reading all the source material. Also cars seem to use a constant amount of points per kilometer I can imagine different road having different values.'' \\
+\textbf{Rem. (look-and-feel)} & ``It looks much better now. But still the text and the buttons.'' \\
+\end{tabular}
+\end{table}
+Reflection: Felt like a good second test. Valuable source of opinions. I'm not to sure how to solve the absolute value problem.
+
+\subsubsection*{User ID 3, Expert}
+User had their route plotted in less than 1 minute. (same as last time)
+\begin{table}[H]
+\begin{tabular}{p{\resulttablecolone}|p{\resulttablecoltwo}}
+\textbf{Origin} & The Hague \\
+\textbf{Mode of transport} & Same as last time \\
+\textbf{Rationale} & Same as last time \\
+\textbf{Remarks (function)} & ``Ooh muh enviroment.'' (sic) \\
+\textbf{Rem. (look-and-feel)} & ``Nice a smiley, how did you do that? Javascript? Do you actually draw it? (..) Nice.'' \\
+\end{tabular}
+\end{table}
+Reflection: Okay, second test was quite worthless. Users likes the technical implementation of the smiley (Yes, actually I draw it in javascript on a canvas element)
+
+\subsubsection*{User ID 4, Advanced}
+User had their route plotted in less than 1 minute.
+\begin{table}[H]
+\begin{tabular}{p{\resulttablecolone}|p{\resulttablecoltwo}}
+\textbf{Origin} & Boven-Leeuwen \\
+\textbf{Mode of transport} & Car or public transport ``If someone drops me off at the station'' \\
+\textbf{Rationale} & ``We need the car because I don't want to walk to the but stop, if someone drops me of in Teil I will use the public transport, because I can not always take the car for a full day and the car given me a bad smiley (sic).'' \\
+\textbf{Remarks (function)} & ``I don't know if I would remember to use it but it seems nice, although it looks like the website of someone with an agenda. You could just change the scores to make something better then pothers of someone paid you.'' (sic) \\
+\textbf{Rem. (look-and-feel)} & ``It looks worse than google maps. Especially the directions from google, they make it ugly so you use their real site right?'' \\
+\end{tabular}
+\end{table}
+Reflection: Bus stop is a 30 minute walk. I was not paid to promote and one kind of mode of transport but my sources might have been. No idea on the purpose of google messing up their results' stylesheets.
+
+\subsubsection*{User ID 5, Beginner}
+User had their route plotted in about 10 minutes.
+\begin{table}[H]
+\begin{tabular}{p{\resulttablecolone}|p{\resulttablecoltwo}}
+\textbf{Origin} & Boven-Leeuwen \\
+\textbf{Mode of transport} & Car \\
+\textbf{Rationale} & ``Bus stop is far away and I would probably shop somethings so the car is convenient to have.'' \\
+\textbf{Remarks (function)} & ``It work just like google maps by tries to guilt me into picking something other than my car. How does it know what our car uses?'' \\
+\textbf{Rem. (look-and-feel)} & ``It looks kind of nice but my apple maps look much better and they don't have public transport though, I think Apple might add that in the future.'' \\
+\end{tabular}
+\end{table}
+Reflection: Not really a beginner in my eyes. Time is due to excessive talking. Overly modest I think, maybe some insecurity speaking up. It does not know what ones car uses it uses an average figure with 1.6-1.7 persons in the car. This was before the announcement by Apple about the public transport info.
+
+\subsubsection*{Second wave reflection}
+This round was a lot more productive, got some concern I can not address because Google does not give all the data in their API. It's really hard to estimate what kind of road the cars need to drive. I could maybe do something with the reported distance per step and time it takes to travel but it would be fuzzy and inaccurate, so instead I used an average value, with 70 percent highway and 30 percent city driving. I think that is about right in the Netherlands. Also the difference between the two was not to big any way.
+
+I put the smileys full green color at 5 pt/km and full red at 25 pt/km. That seems to work, as long as we can't do anything with the planes feature of google maps, nothing really uses more than a car at 30-31 pt/km.
+
+\end{document}
