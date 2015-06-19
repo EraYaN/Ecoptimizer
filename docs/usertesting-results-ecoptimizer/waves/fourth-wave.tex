@@ -1,0 +1,47 @@
+% !TeX spellcheck = en_GB
+% !TEX program = xelatex+makeindex+bibtex
+\documentclass[final,a4paper,11pt]{article}
+\input{../../library/preamble.tex}
+\input{../../library/style.tex}
+\addbibresource{../library/bibliography.bib}
+\author{Erwin de Haan}
+\title{User testing results for Ecoptimizer}
+\date{\today}
+\newlength{\resulttablecolone}
+\setlength{\resulttablecolone}{4 cm}
+\newlength{\resulttablecoltwo}
+\setlength{\resulttablecoltwo}{11.3 cm}
+\begin{document}
+\maketitle
+
+\subsection*{Fourth-wave (N=2)}
+\subsubsection*{User ID 10, Beginner}
+User had their route plotted in about 2 minutes.
+\begin{table}[H]
+\begin{tabular}{p{\resulttablecolone}|p{\resulttablecoltwo}}
+\textbf{Origin} & Vianen \\
+\textbf{Mode of transport} & Car (and P\&R) \\
+\textbf{Rationale} & ``I would just park it in one of the P\&R facilities, works very well for Amsterdam, this thing doesn't give me that option though.'' \\
+\textbf{Remarks (function)} & ``Smiley is a nice touch, not really my thing though, I have a TomTom.'' \\
+\textbf{Rem. (look-and-feel)} & ``Looks nice, although the google route is not that easy to read.'' \\
+\end{tabular}
+\end{table}
+Reflection: Regularly uses P\&R for Amsterdam and Utrecht. Google sadly does not expose this option through it's API, would be great way to promote this kind of parking.
+
+\subsubsection*{User ID 11, Advanced}
+User had their route plotted in about 1 minute.
+\begin{table}[H]
+\begin{tabular}{p{\resulttablecolone}|p{\resulttablecoltwo}}
+\textbf{Origin} & Rijswijk \\
+\textbf{Mode of transport} & Public Transport \\
+\textbf{Rationale} & ``Public transport is free, car is not and it's too far to cycle or walk.'' \\
+\textbf{Remarks (function)} & ``It seems to work fine, no idea where you get the numbers from. (..) Aah I see, nasty table, the way you present it makes it at least less problematic to calculate your points. You just use averages for cars and busses and such? (..)'' \\
+\textbf{Rem. (look-and-feel)} & ``Looks like it was made with Bootstrap (..) I see, well you could style it more.'' \\
+\end{tabular}
+\end{table}
+Reflection: Student, hence the free public transport. I did indeed use bootstrap (a css/style framework) and I did not change many of the colors of the default theme, I did change plenty of margins and other more important stuff.
+
+\subsubsection*{Fourth wave reflection}
+It seems most people can't really can think of things of mayor thing they would change. In the way many people use the website, I think the layout is sufficiently good now to be final. People use it like it google maps which was intended. I tried to at least make it kind of familiar to use and that seems to have worked out.
+
+\end{document}

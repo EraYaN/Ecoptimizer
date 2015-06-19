@@ -11,7 +11,45 @@
 \maketitle
 The Ecoptimizer is a tool to see how much impact your travel has on the world.
 \section{Impact}
-I have a table of value with points per kilometer. Google gives back each route in steps with the type of travel attatched (Table \ref{tab:google-transport-modes})
+I have a table of values with points per kilometer. Google gives back each route in steps with the type of travel attatched (Table \ref{tab:google-transport-modes}).
+The main calculation is in essence a small LCA-style product and sum.
+Each kilometer of each different mode of transport is summed and then multiplied with the pt/km value for that mode.
+A total is calculated and an overall pt/km value to give a good way to compare journeys of differing lengths.
+
+The values are heavily optimised for the Netherlands (ex. stop density for public transport and urban density for car usage), but should work fairly well in differing countries. The base data is for the UK. The ones that I have no data for are very rare in the Netherlands and most of the time a very short leg on the journey. So their impact is near insignificant.
+
+I personally have a problem with the car figure. It would need to be differentiated between city driving and highway driving. This is currently not possible using the Google Maps API. So this average is based on the urban density of the UK. It's the value for a small family car with average occupation (1.6 persons).
+\begin{table}[H]
+\caption{Google Transport Modes and their points per kilometer \cite{ben-lane-lca}}
+\label{tab:google-transport-modes}
+\begin{tabular}{l|r|p{4cm}|p{4cm}}
+\textbf{Type} & \textbf{pt/km} & \textbf{Description} & \textbf{ID \& remarks} \\
+\hline
+\hline
+DRIVING & 30.30 & Car & ID 201 \\
+WALKING & 5.41 & Walking & ID 1 \\
+CYCLING & 4.39 & Bicycle & ID 3 \\
+TRANSIT\_RAIL & 8.29 & Rail & ID 87 (diesel)\\
+TRANSIT\_METRO\_RAIL & 8.29 & Light rail transit & ID 94 (electric)\\
+TRANSIT\_SUBWAY & 12.36 & Underground light rail & ID 100 (electric) \\
+TRANSIT\_TRAM & 12.36 & Above ground light rail & ID 100 (electric) \\
+TRANSIT\_MONORAIL & 8.29 & Monorail & ID 94 (electric) \\
+TRANSIT\_HEAVY\_RAIL & 5.53 & Heavy rail & ID 93 (electric) \\
+TRANSIT\_COMMUTER\_TRAIN & 21.57 & Commuter rail & ID 84 (diesel) \\
+TRANSIT\_HIGH\_SPEED\_TRAIN & 6.35 & High speed train & ID 93 * $\approx$ 31/27 (based on source \cite[p. 35]{network-rail-comparison}) (electric) \\
+TRANSIT\_BUS & 15.11 & Bus & ID 23 (from 2006)\\
+TRANSIT\_INTERCITY\_BUS & 10.46 & Intercity bus & ID 31 (from 2006)\\
+TRANSIT\_TROLLEYBUS & 10.58 & Trolleybus & ID 23 * $\approx$ 0.7 (based on source \cite[p. 101]{life-cycle-buses})\\
+TRANSIT\_SHARE\_TAXI & 15.23 & Share taxi is a kind of bus with the ability to drop off and pick up passengers anywhere on its route & ID 66 (from 2006) \\
+TRANSIT\_FERRY & 5 & Ferry & Default * 0.5, NO DATA (educated guess)\\
+TRANSIT\_CARFERRY & 8 & Car ferry & Default * 0.8, NO DATA (educated guess)\\
+TRANSIT\_CABLE\_CAR & 8 & A vehicle that operates on a cable, usually on the ground. Aerial cable cars may be of the type TRANSIT\_GONDOLA\_LIFT & Default * 0.5, NO DATA (educated guess)\\
+TRANSIT\_GONDOLA\_LIFT & 8 & An aerial cable car & Default * 0.8, NO DATA (educated guess)\\
+TRANSIT\_FUNICULAR & 4 & A vehicle that is pulled up a steep incline by a cable. A Funicular typically consists of two cars, with each car acting as a counterweight for the other & Default * 0.4, NO DATA (educated guess)\\
+TRANSIT\_OTHER & 10 & All other vehicles will return this type & Default, NO DATA\\
+\hline
+\end{tabular}
+\end{table}
 \section{Indicator}
 At first I had a normal RGB gradient between green and red, this gave a very nasty brownish color in the middle. (Figure \ref{fig:green-to-red-rgb})
 This does not look very good the better option it to make the gradient by changing the hue from HSL/HSB colors. (Figure \ref{fig:green-to-red-hsb})

@@ -39,7 +39,8 @@ var ecoCosts = {
 	TRANSIT_RAIL: { name: 'Rail', cost: 8.29 }, /* ID 87 (diesel)*/
 	TRANSIT_SUBWAY: { name: 'Subway', cost: 12.36 }, /* ID 100  (electric)*/
 	TRANSIT_TRAM: { name: 'Tram', cost: 12.36 }, /* ID 100  (electric)*/
-	TRANSIT_MONORAIL: { name: 'Monorail', cost: 5.53 }, /* ID 93 (electric)*/
+	TRANSIT_METRO_RAIL: { name: 'Light Rail', cost: 8.29 }, /* ID 94 (electric)*/
+	TRANSIT_MONORAIL: { name: 'Monorail', cost: 8.29 }, /* ID 94 (electric)*/
 	TRANSIT_COMMUTERTRAIN: { name: 'Communter Train', cost: 21.57 }, /* ID 84 (diesel) */
 	TRANSIT_HIGH_SPEED_TRAIN: { name: 'High Speed Train', cost: 6.35 }, /* ID 93 * ~ 31/27 (based on source 3 pag 35) (electric)*/
 	TRANSIT_BUS: { name: 'Bus', cost: 15.11 }, /* ID 23 (from 2006)*/
